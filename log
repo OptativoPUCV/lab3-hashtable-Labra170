@@ -16,3 +16,9 @@ hashmap.c:68:3: note: ...this statement, but the latter is misleadingly indented
 cc1: all warnings being treated as errors
 Compilation failed
 81e77d7
+Sat 09 Sep 2023 11:32:14 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+d68ef6f
