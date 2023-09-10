@@ -87,9 +87,15 @@ HashMap * createMap(long capacity) // Función 1.
   return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) // Función 4
+{    
+  Pair * parAux = searchMap(map, key);
 
-
+  if (parAux != NULL)
+  {
+    parAux->key = NULL;
+    map->size--;
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key) // Función 3.
