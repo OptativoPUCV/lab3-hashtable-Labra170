@@ -118,12 +118,38 @@ Pair * searchMap(HashMap * map,  char * key) // Función 3.
   return parAux;
 }
 
-Pair * firstMap(HashMap * map) {
+Pair * firstMap(HashMap * map) // Función 5.1
+{
+  map->current = -1;
 
-    return NULL;
+  for (int i = 0; i < map->capacity; i++)
+    {
+      if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+      {
+        map->current = i;
+        return map->buckets[i];
+      }
+    }
+  
+  return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
-
-    return NULL;
+Pair * nextMap(HashMap * map)
+{
+  if (map->current == -1)
+  {
+    return firstMap(map);
+  }
+  else
+  {
+    for (int i = map->current + 1; i < map->capacity; i++)
+      {
+        if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+        {
+          map->current = i;
+          return map->buckets[i];
+        }
+      }
+  }
+  return NULL;
 }
